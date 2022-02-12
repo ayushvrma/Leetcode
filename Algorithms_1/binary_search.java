@@ -1,3 +1,5 @@
+package Algorithms_1;
+
 // implement in log n complexity
 /**
  * binary_search
