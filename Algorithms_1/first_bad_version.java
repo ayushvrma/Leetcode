@@ -5,10 +5,20 @@ package Algorithms_1;
 
 public class Solution extends VersionControl {
     public int firstBadVersion(int n) {
-        for (int i = n; i >= 2; i--) {
-            if (isBadVersion(i) && !isBadVersion(i - 1))
-                return i;
+        int i = 1, j = n;
+        while (i < j) {
+            int m = i + (j - i) / 2;
+            if (isBadVersion(m)) {
+                j = m;
+            } else {
+                i = m + 1;
+            }
         }
-        return 1;
+
+        if (isBadVersion(i)) {
+            return i;
+        }
+
+        return j;
     }
 }
