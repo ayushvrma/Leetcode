@@ -1,4 +1,4 @@
-package Algorithms_1;
+package Algorithms_1.Day_1;
 
 // implement in log n complexity
 /**
