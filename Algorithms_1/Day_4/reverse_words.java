@@ -11,7 +11,6 @@ public class reverse_words {
 
     public String reverseWords(String s) {
         String s2 = "";
-        int sp = 0;
         String[] arr = s.split(" ");
         for (int i = 0; i < arr.length; i++) {
             s2 += reverseString(arr[i]);
