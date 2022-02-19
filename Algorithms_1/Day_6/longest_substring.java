@@ -4,20 +4,19 @@ import java.util.*;
 
 public class longest_substring {
     public int lengthOfLongestSubstring(String s) {
-        if(s.length()==0)
-            return 0;
-        String sub="";
-        int longest = s.length();
-        while(longest>=1){
-            for(int i=0; i<=s.length()-longest;i++){
-            sub = s.substring(i,i+longest);
-             Set<String> hashSet = new HashSet<String>(Arrays.asList(sub.split("")));
-             if(sub.length()==hashSet.size()){
-                 return sub.length();
-             }
+        Map<Character,Integer> map = new HashMap<>();
+        String output = "";
+        int start,end;
+        for(start = 0, end=0; end<s.length();end++){
+            char ch = s.charAt(end);
+            if(map.containsKey(ch)){
+                start = Math.max(map.get(ch)+1, start);
             }
-            longest--;
+            if(output.length()<end-start +1){
+                output = s.substring(start,end+1);
+            }
+            map.put(ch, end);
         }
-        return 1;
+        return output.length();
 }
 }
