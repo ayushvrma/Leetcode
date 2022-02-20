@@ -1,7 +1,6 @@
 package Algorithms_1.Day_6;
 
 import java.util.Arrays;
-import java.util.HashMap;
 
 
 public class permutation_string {
