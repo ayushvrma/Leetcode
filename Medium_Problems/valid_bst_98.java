@@ -1,4 +1,4 @@
-package Easy_Problems;
+package Medium_Problems;
 import java.util.*;
 
 public class valid_bst_98 {
