@@ -2,25 +2,26 @@ package Medium_Problems;
 
 
 public class add_numbers_2 {
-    int count=0;
-    public void add(ListNode l1, ListNode l2, int count){
-        l1.val += l2.val;
-        if(l1.val>=10){
-            count = l1.val/10;
-            l1.val = l1.val%10;
-        }
-        
-    }
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        if(l1==null){
-            return l2;
+        ListNode head= new ListNode(0);
+        ListNode l3 = head;
+        int carry = 0;
+        while(l1!=null || l2!=null){
+            int l1_val = (l1!=null)?l1.val:0;
+            int l2_val = (l2!=null)?l2.val:0;
+            int sum = l1_val+l2_val+carry;
+            carry = sum/10;
+            sum = sum%10;
+            l3.next = new ListNode(sum);
+            l3 = l3.next;
+            if(l1!=null) l1 = l1.next;
+            if(l2!=null) l2 = l2.next;
+            l3 = l3.next;
         }
-        else if(l2==null){
-            return l1;
+        if(carry>0){
+            l3.next = new ListNode(carry);
+            l3 = l3.next;
         }
-        ListNode head=l1;
-        add(l1, l2, count);
-        return head;
-
+        return head.next;
     }
 }
