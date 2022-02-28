@@ -20,7 +20,6 @@ public class town_judge_997 {
                 h.put(b, 1);
             }
         }
-        int max = 0;
         for (int i = 1; i <= n; i++) {
             if (h.containsKey(i) && h.get(i) == n - 1 && !s.contains(i))
                 return i;
