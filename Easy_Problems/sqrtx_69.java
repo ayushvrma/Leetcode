@@ -7,14 +7,15 @@ public class sqrtx_69 {
         int mid;
         while(left<=right){
             mid = (left+right)/2;
-            if(mid*mid<x){
-                left = mid+1; //means we guessed way too less so reduce the lower limit
+            if (mid > x / mid) {
+                right = mid - 1; //means we guessed way too high so reduce the upper limit
                 continue;
             }
-            if(mid*mid>x){
-                right = mid-1; //means we guessed way too high so reduce the upper limit
+            if ((mid + 1) <= x / (mid + 1)) {
+                left = mid + 1; //means we guessed way too less so inc the lower limit
                 continue;
             }
+            //if mid+1 sq is not less than x and mid sq is also not greater than x, then were in the sweet spot.
             return mid;
         }
         return x; //for conditions x<=1, 
