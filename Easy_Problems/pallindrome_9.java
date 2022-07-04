@@ -21,7 +21,3 @@ public class pallindrome_9 {
         return true;
         }
     }
-    public static void main(String[] args) {
-        System.out.println(new pallindrome_9().isPalindrome(121));
-    }
-}

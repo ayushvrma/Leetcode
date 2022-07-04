@@ -1,7 +1,7 @@
 package Easy_Problems;
 
 public class add_binary_67 {
-    public static String addBinary(String a, String b) {
+    public String addBinary(String a, String b) {
         String result = "";
         int i = a.length() - 1;
         int j = b.length() - 1;
@@ -19,8 +19,5 @@ public class add_binary_67 {
             result = result.concat("1");
         }
         return new StringBuilder(result).reverse().toString();
-    }
-    public static void main(String[] args) {
-        System.out.println(addBinary("111", "1"));
     }
 }
