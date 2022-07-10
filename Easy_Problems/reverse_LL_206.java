@@ -2,16 +2,23 @@ package Easy_Problems;
 
 /**
  * reverse_LL_206
+ * 
+ * 
+ * 1->2->3->4
+ * 4->3->2->1
+ * 
  */
 public class reverse_LL_206 {
 
     public ListNode reverseList(ListNode head){
-        if(head==null || head.next==null) return head;
-        ListNode temp = head.next.next;
-        return 
-    }
-    public ListNode reverese(ListNode head, ListNode temp){
-        
+        ListNode prev = null;
+        while(head!=null){
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        } 
+        return prev;
     }
 }
 
