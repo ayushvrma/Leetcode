@@ -1,15 +1,16 @@
 package Easy_Problems;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class happy_number_202 {
     public boolean isHappy(int n){
-        HashMap<Integer,Integer> h = new HashMap<Integer,Integer>();
+        HashSet<Integer> h = new HashSet<Integer>();
         while(n>0){
             if(n==1) return true;
-            if(h.containsKey(n)) return false;
+            if(h.contains(n)) return false;
             int num = square(n);
-            h.put(n, num);
+            h.put(n);
         }
         return false;
     }
