@@ -18,23 +18,21 @@ public class valid_pallindrome_125 {
 
 
 
-//13% faster
+//20% faster
     public boolean isPallindrome(String s){
-        String str="";
+        String str = "";
         s = s.toLowerCase();
-        for(char c: s.toCharArray()){
-            if(Character.isDigit(c) || Character.isLetter(c)){
+        for (char c : s.toCharArray()){
+            if(Character.isLetter(c) || Character.isDigit(c)){
                 str+=c;
             }
         }
-        int first_pointer = 0;
-        int second_pointer = s.length()-1;
-        while(first_pointer<=second_pointer) // onlly check till midway to save time
-        {
-            if(str.charAt(first_pointer)!=str.charAt(second_pointer))
+        int a = 0, b = str.length()-1;
+        while(a<b){
+            if(str.charAt(a)!=str.charAt(b))
                 return false;
-            first_pointer++;
-            second_pointer--;
+
+            a++;b--;
         }
         return true;
     }
